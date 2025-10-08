@@ -11,21 +11,53 @@
 		<meta charset="UTF-8">
 		<title>Vasu Car Wash</title>
 		<style type="text/css">
-		
-		
-		
-		.center-box{
-			float: left;
-			margin-left: 400px
-		}
-		</style>
+.book-btn {
+	background-color: #00aaff;
+	color: white;
+	padding: 8px 15px;
+	border-radius: 30px;
+	font-size: 11px;
+	text-decoration: none;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-btn:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0 10px rgba(0, 170, 255, 0.6);
+}
+
+.center-box {
+	float: left;
+	margin-left: 400px
+}
+
+.confirm-btn {
+	background-color: #28a745; /* Green for success */
+	color: white;
+	padding: 6px 6px;
+	font-size: 11px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.confirm-btn:hover {
+	background-color: #218838;
+	transform: scale(1.05);
+}
+
+.confirm-btn:active {
+	transform: scale(0.98);
+}
+</style>
 	</head>
 	<body>
 	<div class="center-box">
-		<h3>Welcome to <b>VASU</b> car wash at your door step</h3>
+		<h3>Welcome to VASU car wash - Where Clean meets care !</h3>
 		<c:choose>
 		<c:when test="${empty customerDetailForm}">
-		<a href="book"><button>Book for car wash</button></a>
+		<a href="book" class="book-btn">🚗 Book Your Car Wash</a>
 		</c:when>
 		<c:otherwise>
 		<br/><br/>
@@ -49,7 +81,7 @@
        
 		<tr><td>choose time slot</td><td>:</td><td> <form:input path="timeSlot" type="time"/> </td><td><form:errors path="timeSlot" cssClass="error" style='color:red'/></td></tr>
        
-		<tr><td></td><td></td><td> <input type="submit" value="proceed"/></td><tr>
+		<tr><td></td><td></td><td> <input type="submit"  class="confirm-btn" value="✅ Confirm Booking"/></td><tr>
 		</table>
 		
 		</form:form>
